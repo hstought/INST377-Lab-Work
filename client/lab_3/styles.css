@@ -7,7 +7,6 @@
   a {
     text-decoration: none;
     color: #fff;
-    /* padding: 2px; */
   }
 
   .wrapper {
@@ -45,4 +44,74 @@
   
   .main-page {
     margin-left: 20px;
+  }
+
+  .header-container {
+    color: #5995DA;
+    background-color: #D6E9FE;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
+  .logo {
+      display: flex;
+      align-items: center;
+  }
+
+  .group-project-link {
+    display: flex;
+    align-items: flex-end;
+    color: #5995DA;
+  }
+
+  .my-github {
+    display: flex;
+    align-items: flex-end;
+    color: #5995DA;
+  }
+
+  .photo-grid-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .photo-grid {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .first-item {
+    order: 1;
+  }
+  
+  .second-item {
+    order: -5;
+  }
+
+  .third-item {
+    order: -3;
+  }
+
+  .forth-item {
+    order: 3;
+  }
+  
+  .last-item {
+    order: -1;
+  }
+
+  .photo-grid-item {
+    border: 1px solid #fff;
+    width: 300px;
+    height: 300px;
   }
