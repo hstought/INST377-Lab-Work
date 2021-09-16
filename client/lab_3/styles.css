@@ -1,1 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #fff;
+    /* padding: 2px; */
+  }
 
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+  }
+
+  .title{
+    display: flex;
+    background-color: rgba(0,139, 139,0.8);
+    padding: 10px 15px;
+  }
+
+  .menu-container {
+    display: flex; 
+    justify-content: center;
+    color: #fff;
+    background-color: #5995DA;  /* Blue */
+    padding: 20px 0;
+  }
+  
+  .menu {
+    display: flex;
+    border: 1px solid #fff;  /* For debugging */
+    width: 900px;
+    justify-content: space-between;
+  }
+
+  .links {
+    border: 1px solid #fff;  /* For debugging */
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .main-page {
+    margin-left: 20px;
+  }
