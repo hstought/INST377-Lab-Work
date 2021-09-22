@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         (obstacleLeft > 200 &&
           obstacleLeft < 280 &&
           birdLeft === 220 &&
-          (birdBottom < obstacleBottom + 153 ||
+          (birdBottom < obstacleBottom + 150 ||
             birdBottom > obstacleBottom + gap - 200)) ||
         birdBottom === 0
       ) {
