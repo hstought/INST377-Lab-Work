@@ -83,6 +83,7 @@ a {
   overflow: hidden;
   max-width: 600px;
   position: relative;
+  margin: auto;
 }
 
 .photo-grid-container .carousel_item,

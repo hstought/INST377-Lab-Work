@@ -15,11 +15,11 @@ document.
 
     function updateSlidePosition() {
         for (let slide of slides) {
-            slide.classList.remove('carousel_item--visable');
+            slide.classList.remove('carousel_item--visible');
             slide.classList.add('carousel_item--hidden');
         }
 
-        slides[slidePosition].classList.add('carousel_item--visable');
+        slides[slidePosition].classList.add('carousel_item--visible');
     }
 
     function moveToNextSlide() {
@@ -28,18 +28,14 @@ document.
         } else {
             slidePosition++;
         }
-
         updateSlidePosition();
     }
 
     function moveToPrevSlide() {
-        
-
         if (slidePosition == 0) {
             slidePosition = totalSlides - 1;
         } else {
             slidePosition--;
         }
-
         updateSlidePosition();
     }
