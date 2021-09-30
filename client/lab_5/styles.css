@@ -16,12 +16,34 @@ body {
 .columns {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .wrapper {
   display: flex;
+  height: 950px;
 }
 .container {
   max-width: 960px;
   margin-top: 25px;
+}
+
+.title {
+  color: orange;
+  background-color: green;
+}
+
+.button {
+  margin-top: 15px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.column.is-narrow {
+  width: 150px;
 }
