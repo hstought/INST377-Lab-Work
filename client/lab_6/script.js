@@ -15,11 +15,12 @@ function findMatches(wordToMatch, resturants) {
 
 function displayMatches() {
   const matchArray = findMatches(this.value, resturants);
-  const html = matchArray.map((place) => {
-    const regex = new RegExp(this.value, 'gi');
-    // const cityName = place.city.replace(regex, `<span class="hl>"${this.value}</span>`);
-    // const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
-    return `
+  const html = matchArray
+    .map((place) => {
+      const regex = new RegExp(this.value, 'gi');
+      // const cityName = place.city.replace(regex, `<span class="hl>"${this.value}</span>`);
+      // const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+      return `
                         <li>
                             <span class="name">${place.name}</span><br>
                             <span class="category">${place.category}</span><br>
@@ -28,7 +29,8 @@ function displayMatches() {
                             <span class="zip"><i>${place.zip}</i></span>
                         </li>
                     `;
-  }).join('');
+    })
+    .join('');
   suggestions.innerHTML = html;
 }
 
