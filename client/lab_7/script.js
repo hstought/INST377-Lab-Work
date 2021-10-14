@@ -1,5 +1,5 @@
 function mapInit() {
-  const mymap = L.map('mapid').setView([51.505, -0.09], 13);
+  const mymap = L.map('mapid').setView([38.9859, -76.930046], 13);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -45,10 +45,8 @@ async function windowActions() {
     suggestions.innerHTML = html;
   }
 
-  const searchInput = document.querySelector('.click-go');
+  const searchInput = document.querySelector('.submit_button');
   const suggestions = document.querySelector('.suggestions');
-
-  // searchInput.addEventListener('change', displayMatches);
 
   searchInput.addEventListener('click', (evt) => {
     displayMatches(evt);
