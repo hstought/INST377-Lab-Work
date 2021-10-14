@@ -28,8 +28,27 @@
     ></script>
   </head>
   <body>
-
-    <h1>Test</h1>
+    <div class="wrapper">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <div class="title">Henry Stought's Lab 7</div>
+            <div class="subtitle">Zip Code Food Search</div>
+            <form class="search-form">
+              <label class="label">Search</label>
+              <input type="text" name="zipcode" id="zipcode" />
+              <button type="submit" class="click-go">Submit</button>
+              <ul class="suggestions">
+                <li>Filter for a resturant by name</li>
+              </ul>
+            </form>
+          </div>
+          <div class="column">
+            <div id="mapid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="script.js" charset="utf-8"></script>
   </body>
 </html>
