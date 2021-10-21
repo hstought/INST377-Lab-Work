@@ -61,3 +61,7 @@ html {
   background-color: aqua;
   margin-top: 15px;
 }
+
+.input {
+  max-width: 25%;
+}

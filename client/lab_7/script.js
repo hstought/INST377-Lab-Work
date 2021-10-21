@@ -26,6 +26,22 @@ async function dataHandler(mapObject) {
     });
   }
 
+  // Remove pins on map
+  function clearMap(mymap) {
+    mymap.eachLayer((layer) => {
+      mymap.removeLayer(layer);
+    });
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: 'pk.eyJ1IjoiaHN0b3VnaHQiLCJhIjoiY2t1cmdpeDJhMGFhaTMxcWp6ZzFtaGp3bCJ9.sCkx1d_mxbcCHjb6Na-q6A'
+    }).addTo(mymap);
+    mymap.setView([38.9859, -76.930046], 13);
+  }
+
   function applyMapMarkers(mymap, testArray) {
     mymap.eachLayer((layer) => {
       mymap.removeLayer(layer);
@@ -54,10 +70,15 @@ async function dataHandler(mapObject) {
   }
 
   function displayMatches() {
-    const matchArray = findMatches(event.target.value, locations);
-    let testArray = matchArray.filter((obj) => Object.keys(obj).includes('geocoded_column_1'));
-    testArray = testArray.slice(0, 5);
-    const html = testArray.map((place) => `          
+    if (event.target.value === '' || event.target.value.length < 5) {
+      suggestions.innerHTML = [];
+      clearMap(mapObject);
+    }
+    if (event.target.value.length === 5) {
+      const matchArray = findMatches(event.target.value, locations);
+      let testArray = matchArray.filter((obj) => Object.keys(obj).includes('geocoded_column_1'));
+      testArray = testArray.slice(0, 5);
+      const html = testArray.map((place) => `          
                   <li>
                   <div class="box">                        
                         <span class="name"><strong>${place.name}</strong></span><br>
@@ -65,15 +86,18 @@ async function dataHandler(mapObject) {
                         </div>
                   </li>
               `).join('');
-    suggestions.innerHTML = html;
-    applyMapMarkers(mapObject, testArray);
+      suggestions.innerHTML = html;
+      applyMapMarkers(mapObject, testArray);
+    }
+    else {
+      console.log('Valid Zip Code not entered');
+    }
   }
 
   const suggestions = document.querySelector('.suggestions');
-
   const input = document.querySelector('input');
 
-  input.addEventListener('input', displayMatches);
+  input.addEventListener('input', (evnt) => { displayMatches(evnt); });
 }
 
 async function windowActions() {
